@@ -19,7 +19,7 @@ public class Radix {
         return (temp % 10);
     }
 
-    public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
+    public static void merge(SortableLinkedList original, SortableLinkedList[] buckets) {
         for (MyLinkedList i : buckets) {
             original.extend(i);
         }
