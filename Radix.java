@@ -12,7 +12,16 @@ public class Radix {
         if (col < 0 || col >= length(n)) {
             throw new IndexOutOfBoundsException(col + " index is out of bounds");
         }
-        int temp = n / (Math.pow(10, col));
+        if (n < 0) {
+            n = -n;
+        }
+        int temp = n / (int)(Math.pow(10, col));
         return (temp % 10);
+    }
+
+    public static void merge(MyLinkedList original, MyLinkedList[] buckets) {
+        for (MyLinkedList i : buckets) {
+            original.extend(i);
+        }
     }
 }
